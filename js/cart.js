@@ -1,9 +1,10 @@
 "use strict";
 
 class Cart extends Goods {
-    constructor(goods, container = ".cart") {
+
+    constructor(goods, quantity) {
         super(goods);
-        this.goods = goods;
+        this.quantity = quantity;
     }
 
     showCountOfGoods() {

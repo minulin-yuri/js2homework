@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Lobster', cursive;
   background-color: #e4fceb;
@@ -85,9 +89,8 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin: 30px;
 }
 
@@ -139,5 +142,45 @@ footer {
   min-height: 50px;
   width: 100%;
   background-color: #ff7700;
+}
+
+.content h3 {
+  text-align: center;
+  margin: 20px;
+  font-size: 25px;
+}
+
+.order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px 50px;
+}
+
+.order h4 {
+  margin-bottom: 50px;
+  font-size: 25px;
+}
+
+.order .cart-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 21px;
+  min-height: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.order .cart-item__count input {
+  width: 50px;
+  margin: 0 20px 0 0;
 }
 /*# sourceMappingURL=main.css.map */

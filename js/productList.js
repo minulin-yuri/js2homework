@@ -1,4 +1,5 @@
 "use strict";
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
 
 class ProductList extends Goods {
     #allProducts;
@@ -9,16 +10,17 @@ class ProductList extends Goods {
         this.#allProducts = [];
 
         this.#fetchGoods();
-        this.#render();
     }
 
     #fetchGoods() {
-        this.goods = [
-            { id: 1, title: 'Notebook', price: 20000 },
-            { id: 2, title: 'Mouse', price: 1500 },
-            { id: 3, title: 'Keyboard', price: 5000 },
-            { id: 4, title: 'Gamepad', price: 4500 },
-        ];
+        getRequest(`${API}/catalogData.json`)
+            .then((data) => {
+                this.goods = JSON.parse(data);
+                this.#render();
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 
     #render() {
@@ -28,6 +30,7 @@ class ProductList extends Goods {
             const productObject = new ProductItem(product);
             this.#allProducts.push(productObject);
             block.insertAdjacentHTML('beforeend', productObject.getHTMLString());
+
         }
     }
 }
