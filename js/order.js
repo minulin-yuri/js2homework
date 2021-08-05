@@ -19,11 +19,28 @@ class Order {
         this.contents = order.contents;
     }
 
+    changeCount() {
+        let items = document.querySelectorAll('.cart-item__count');
+        items.forEach(item => {
+            item.children[0].addEventListener('click', () => {
+                item.children[1].value++;
+            });
+            item.children[2].addEventListener('click', () => {
+                if (item.children[1].value > 1) {
+                    item.children[1].value--;
+                } else {
+                    item.parentNode.remove();
+                }
+            });
+        });
+    }
+
     #getOrder() {
         getRequest(`${API}/getBasket.json`)
             .then((data) => {
                 this.#getParams(JSON.parse(data));
                 this.#render();
+                this.changeCount();
             })
             .catch((error) => {
                 console.log(error);

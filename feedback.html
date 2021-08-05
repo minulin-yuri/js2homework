@@ -3,18 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Корзина</title>
+    <title>Обратная связь</title>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
-    <script defer src="./js/httpRequest.js"></script>
-    <script defer src="./js/product.js"></script>
-    <script defer src="./js/productItem.js"></script>
-    <script defer src="./js/cartItem.js"></script>
-    <script defer src="./js/goods.js"></script>
-    <script defer src="./js/productList.js"></script>
-    <script defer src="./js/cart.js"></script>
-    <script defer src="./js/order.js"></script>
-    <script defer src="./js/mainCart.js"></script>
+    <script defer src="./js/validator.js"></script>
+    <script defer src="./js/mainFeedback.js"></script>
+
 </head>
 
 <body>
@@ -47,6 +41,8 @@
                     </button>
                 </a>
             </div>
+
+
             <div class="cart"></div>
         </div>
 
@@ -54,8 +50,29 @@
     <main>
         <div class="container">
             <div class="content">
-                <h3>Корзина</h3>
-                <div class="order"></div>
+                <form action="#">
+                    <div class="contact-item input-name">
+                        <label for="name">Имя</label>
+                        <input id="name" name="name" type="text" placeholder="Введите имя" autocomplete="off">
+                    </div>
+                    <div class="contact-item input-error name-error"></div>
+                    <div class="contact-item">
+                        <label for="phone">Телефон</label>
+                        <input id="phone" name="phone" type="tel" placeholder="Введите телефон" autocomplete="off">
+                    </div>
+                    <div class="contact-item input-error phone-error"></div>
+                    <div class="contact-item">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="example@mail.ru" autocomplete="off">
+                    </div>
+                    <div class="contact-item input-error email-error"></div>
+                    <div class="contact-item">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message" placeholder="Введите сообщение"
+                            autocomplete="off"></textarea>
+                    </div>
+                    <button class="feedback-button" type="button">Отправить</button>
+                </form>
             </div>
         </div>
     </main>

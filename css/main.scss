@@ -42,6 +42,7 @@ h1 {
 .btn-cart {
     border: none;
     background: none;
+    margin: 0 0 0 25px;
 
     &__icon {
         width: 50px;
@@ -155,10 +156,68 @@ footer {
         justify-content: space-around;
 
         &__count {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
             & input {
-                width: 50px;
-                margin: 0 20px 0 0;
+                width: 30px;
+                margin: 0 20px 0;
             }
+        }
+
+        &__add, &__delete {
+
+            & svg {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+//feedback
+.content {
+
+    & form {
+        margin: 30px 100px;
+        width: 400px;
+
+        & .contact-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 21px;
+
+            & input {
+                width: 200px;
+                height: 25px;
+
+                &::placeholder {
+                    color:#bbbbbb;
+                    font-size: 12px;
+                }
+            }
+
+            & textarea {
+                width: 200px;
+
+                &::placeholder {
+                    color:#bbbbbb;
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+        & .input-error {
+            margin: 10px 0;
+            font-size: 12px;
+        }
+
+        & button {
+            padding: 3px 15px;
+            font-size: 16px;
         }
     }
 }
