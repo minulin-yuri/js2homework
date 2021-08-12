@@ -71,19 +71,19 @@ h1 {
   color: #e4fceb;
 }
 
-.search__icon {
-  border: 0;
-}
-
-.search__icon svg {
+.search svg {
   background-color: #ff7700;
   border: 0;
   outline: 0;
   width: 25px;
 }
 
-.search__icon svg path {
+.search svg path {
   fill: #e4fceb;
+}
+
+.filtered-text {
+  color: #ff7700;
 }
 
 .links {
